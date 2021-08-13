@@ -15,6 +15,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+import sun.misc.Unsafe;
 
 /**
  * Created by liujie on 2021/6/22
@@ -59,6 +60,7 @@ public class NettyServer {
                 .option(ChannelOption.SO_BACKLOG, 1024);
 
         bind(serverBootstrap, PORT);
+
     }
 
     private static void bind(final ServerBootstrap serverBootstrap, final int port) {
